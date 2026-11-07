@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Andrea Rosso | Seguros médicos y protección familiar</title>
-<meta name="description" content="Andrea Rosso, agente de seguros en Estados Unidos. Orientación en seguros médicos y protección familiar, en español e inglés.">
+<meta name="description" content="Andrea Rosso, agente de seguros en Estados Unidos. Seguros médicos, dentales, de accidente, de vida y de hospitalización, en español e inglés.">
 <meta property="og:title" content="Andrea Rosso | Health &amp; Family Protection">
 <meta property="og:description" content="Te ayudo a explorar opciones de cobertura médica y protección familiar. Atención en español e inglés.">
 <meta property="og:image" content="img/andrea-traje.jpg">
@@ -84,12 +84,25 @@
   /* Services */
   .services{padding-top:96px;padding-bottom:40px}
   .section-head{display:flex;flex-direction:column;gap:14px;max-width:680px;margin-bottom:48px}
-  .cards{display:flex;flex-wrap:wrap;gap:28px}
-  .card{flex:1 1 340px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:16px;scroll-margin-top:100px}
+    .card{flex:1 1 340px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:16px;scroll-margin-top:100px}
   .card-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center}
   .card h3{font-size:24px;font-weight:800;color:var(--navy)}
   .card p{font-size:16.5px;line-height:1.65;color:var(--muted)}
   .card .lead{font-size:18px;line-height:1.5;color:var(--navy);font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .card-cta{background:var(--navy);border-color:var(--navy);justify-content:center}
+  .card-cta h3{color:#fff}
+  .card-cta p{color:#D9E1EE}
+  .card-cta .btn{align-self:flex-start;margin-top:6px}
+  .carriers-wrap{padding-bottom:88px}
+  .carriers-title{text-align:center;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-text);margin-bottom:24px}
+  .carriers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+  .carrier{height:96px;background:var(--ground);border:1px solid var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;padding:16px 20px;text-align:center}
+  .carrier img{max-height:52px;max-width:100%;width:auto;object-fit:contain}
+  .carrier-name{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.2px}
+  .social{display:flex;gap:10px}
+  .social a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(220,193,132,.55);display:flex;align-items:center;justify-content:center}
+  .social a:hover{background:rgba(220,193,132,.15)}
 
   /* Steps */
   .steps{padding-top:56px;padding-bottom:96px}
@@ -112,7 +125,7 @@
 
   /* About */
   .about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .about-in{display:flex;flex-wrap:wrap;align-items:center;gap:64px;padding-top:96px;padding-bottom:96px}
+  .about-in{display:flex;flex-wrap:wrap;align-items:center;gap:64px;padding-top:96px;padding-bottom:72px}
   .about-photo{flex:1 1 340px;min-width:0;max-width:460px}
   .about-photo img{width:100%;height:520px;object-fit:cover;object-position:50% 25%;border-radius:20px}
   .about-text{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:20px}
@@ -140,7 +153,8 @@
   /* Footer */
   footer{background:var(--navy-deep);color:#C9D3E3}
   .footer-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;padding-top:48px;padding-bottom:48px}
-  .footer-brand img{height:84px;width:auto}
+  .footer-brand{display:flex;flex-direction:column;gap:18px}
+  .footer-brand img{height:84px;width:auto;align-self:flex-start}
   .footer-legal{flex:1 1 420px;min-width:0;max-width:620px;display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.6}
 
   /* Botón flotante WhatsApp */
@@ -176,9 +190,9 @@
     <nav aria-label="Principal">
       <ul>
         <li><a href="#inicio"><span lang="es">Inicio</span><span lang="en">Home</span></a></li>
-        <li><a href="#seguros-medicos"><span lang="es">Seguros médicos</span><span lang="en">Health insurance</span></a></li>
-        <li><a href="#proteccion-familiar"><span lang="es">Protección familiar</span><span lang="en">Family protection</span></a></li>
-        <li><a href="#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About me</span></a></li>
+        <li><a href="#seguros"><span lang="es">Seguros</span><span lang="en">Insurance</span></a></li>
+        <li><a href="#red-medica"><span lang="es">Red médica</span><span lang="en">Medical network</span></a></li>
+        <li><a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></li>
       </ul>
     </nav>
     <div class="header-actions">
@@ -204,7 +218,7 @@
         <p lang="en">Hello, I’m Andrea Rosso. My goal is to help you explore health coverage and family protection options, with personalized guidance and clear explanations so you can make informed decisions based on your needs.</p>
         <div class="hero-actions">
           <a class="btn btn-gold" href="#contacto"><span lang="es">Solicitar orientación</span><span lang="en">Request guidance</span></a>
-          <a class="btn btn-ghost" href="#seguros-medicos"><span lang="es">Ver servicios</span><span lang="en">See services</span></a>
+          <a class="btn btn-ghost" href="#seguros"><span lang="es">Ver seguros</span><span lang="en">See insurance</span></a>
         </div>
         <span class="hero-note"><span lang="es">Estoy aquí para orientarte en español o inglés.</span><span lang="en">I’m here to assist you in English or Spanish.</span></span>
       </div>
@@ -224,33 +238,47 @@
     </ul>
   </section>
 
-  <section class="wrap services" aria-labelledby="servicios-titulo">
+  <section class="wrap services" id="seguros" aria-labelledby="seguros-titulo">
     <div class="section-head">
-      <span class="eyebrow"><span lang="es">Servicios</span><span lang="en">Services</span></span>
-      <h2 id="servicios-titulo"><span lang="es">Orientación para proteger lo que más importa</span><span lang="en">Guidance to protect what matters most</span></h2>
+      <span class="eyebrow"><span lang="es">Seguros</span><span lang="en">Insurance</span></span>
+      <h2 id="seguros-titulo"><span lang="es">Seguros para proteger lo que más importa</span><span lang="en">Insurance to protect what matters most</span></h2>
     </div>
     <div class="cards">
-      <article class="card" id="seguros-medicos">
-        <div class="card-icon" style="background:#EEF2F8" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16315A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M12 9v6M9 12h6"/></svg>
-        </div>
-        <h3><span lang="es">Seguros médicos</span><span lang="en">Health insurance</span></h3>
-        <p lang="es">Encontrar una cobertura médica puede resultar complicado. Estoy aquí para ayudarte a comprender las opciones disponibles, revisar tus necesidades y orientarte durante el proceso de selección.</p>
-        <p lang="es">Cada persona y cada familia tienen circunstancias diferentes. Mi objetivo es ayudarte a encontrar una opción que se ajuste a tu situación y presupuesto, según la disponibilidad y los requisitos aplicables.</p>
-        <p lang="en">Finding health coverage can feel complicated. I’m here to help you understand the available options, review your needs and guide you through the selection process.</p>
-        <p lang="en">Every person and every family has different circumstances. My goal is to help you find an option that fits your situation and budget, subject to availability and applicable requirements.</p>
+      <article class="card" id="seguro-medico">
+        <div class="card-icon" style="background:#EEF2F8" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16315A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M12 9v6M9 12h6"/></svg></div>
+        <h3><span lang="es">Seguro médico</span><span lang="en">Health insurance</span></h3>
+        <p lang="es">Encontrar una cobertura médica puede resultar complicado. Te ayudo a comprender las opciones disponibles y a encontrar una que se ajuste a tu situación y presupuesto, según la disponibilidad y los requisitos aplicables.</p>
+        <p lang="en">Finding health coverage can feel complicated. I help you understand the available options and find one that fits your situation and budget, subject to availability and applicable requirements.</p>
       </article>
-      <article class="card" id="proteccion-familiar">
-        <div class="card-icon" style="background:#F6EFDF" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-6z"/><circle cx="9.5" cy="10" r="1.6"/><circle cx="14.5" cy="10" r="1.6"/><path d="M7 15.5c.6-1.5 1.5-2.2 2.5-2.2s1.9.7 2.5 2.2c.6-1.5 1.5-2.2 2.5-2.2s1.9.7 2.5 2.2"/></svg>
-        </div>
-        <h3><span lang="es">Protección familiar</span><span lang="en">Family protection</span></h3>
-        <p class="lead" lang="es">Planificar hoy puede ayudar a proteger el mañana.</p>
-        <p lang="es">La protección financiera de tu familia comienza con información y una buena planificación. Te ayudo a explorar soluciones de protección de acuerdo con tus objetivos, responsabilidades familiares y presupuesto.</p>
-        <p lang="es">Mi compromiso es explicarte las opciones con claridad para que puedas decidir con confianza.</p>
-        <p class="lead" lang="en">Planning today can help protect tomorrow.</p>
-        <p lang="en">Your family’s financial protection starts with information and good planning. I help you explore protection solutions based on your goals, family responsibilities and budget.</p>
-        <p lang="en">My commitment is to explain your options clearly so you can decide with confidence.</p>
+      <article class="card" id="seguro-dental">
+        <div class="card-icon" style="background:#EEF2F8" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16315A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.5c-2.5 0-4 2-4 4.5 0 2 .8 3.4 1.4 5 .7 2 .8 4.2 1.4 6 .4 1.3 1.8 1.4 2.3.1.6-1.7.9-4.6 3.4-4.6s2.8 2.9 3.4 4.6c.5 1.3 1.9 1.2 2.3-.1.6-1.8.7-4 1.4-6 .6-1.6 1.4-3 1.4-5 0-2.5-1.5-4.5-4-4.5-1.8 0-2.6 1-4.5 1s-2.7-1-4.5-1z"/></svg></div>
+        <h3><span lang="es">Seguro dental</span><span lang="en">Dental insurance</span></h3>
+        <p lang="es">Opciones para cuidar la salud oral de toda la familia, desde chequeos y limpiezas hasta otros tratamientos, según el plan que elijas.</p>
+        <p lang="en">Options to care for your whole family’s oral health, from checkups and cleanings to other treatments, depending on the plan you choose.</p>
+      </article>
+      <article class="card" id="seguro-accidente">
+        <div class="card-icon" style="background:#F6EFDF" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="8.2" width="18.8" height="7.6" rx="3.8" transform="rotate(-45 12 12)"/><path d="M10.6 10.6h.01M13.4 13.4h.01M13.4 10.6h.01M10.6 13.4h.01"/></svg></div>
+        <h3><span lang="es">Seguro de accidente</span><span lang="en">Accident insurance</span></h3>
+        <p lang="es">Un respaldo económico ante gastos inesperados por un accidente, como complemento a tu seguro médico.</p>
+        <p lang="en">Financial support for unexpected expenses after an accident, as a complement to your health insurance.</p>
+      </article>
+      <article class="card" id="seguro-vida">
+        <div class="card-icon" style="background:#F6EFDF" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-6z"/><circle cx="9.5" cy="10" r="1.6"/><circle cx="14.5" cy="10" r="1.6"/><path d="M7 15.5c.6-1.5 1.5-2.2 2.5-2.2s1.9.7 2.5 2.2c.6-1.5 1.5-2.2 2.5-2.2s1.9.7 2.5 2.2"/></svg></div>
+        <h3><span lang="es">Seguro de vida</span><span lang="en">Life insurance</span></h3>
+        <p lang="es">Planificar hoy puede ayudar a proteger el mañana. Te ayudo a explorar opciones de protección de acuerdo con tus objetivos, responsabilidades familiares y presupuesto.</p>
+        <p lang="en">Planning today can help protect tomorrow. I help you explore protection options based on your goals, family responsibilities and budget.</p>
+      </article>
+      <article class="card" id="seguro-hospitalizacion">
+        <div class="card-icon" style="background:#EEF2F8" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16315A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19V6M2 15h20v4M22 15v-3a3 3 0 0 0-3-3h-8v6"/><circle cx="6.5" cy="11.5" r="2"/></svg></div>
+        <h3><span lang="es">Seguro de hospitalización</span><span lang="en">Hospital insurance</span></h3>
+        <p lang="es">Un apoyo económico si necesitas ser hospitalizado, para que puedas enfocarte en tu recuperación. Los beneficios dependen del plan.</p>
+        <p lang="en">Financial support if you need to be hospitalized, so you can focus on your recovery. Benefits depend on the plan.</p>
+      </article>
+      <article class="card card-cta">
+        <h3><span lang="es">¿No sabes cuál necesitas?</span><span lang="en">Not sure which one you need?</span></h3>
+        <p lang="es">Conversemos sobre tu situación y te explico con claridad las opciones que se ajustan a ti y a tu familia.</p>
+        <p lang="en">Let’s talk about your situation and I’ll clearly explain the options that fit you and your family.</p>
+        <a class="btn btn-gold" href="#contacto"><span lang="es">Solicitar orientación</span><span lang="en">Request guidance</span></a>
       </article>
     </div>
   </section>
@@ -318,18 +346,27 @@
     </div>
   </section>
 
-  <section class="about" id="sobre-mi">
+  <section class="about" id="red-medica">
     <div class="wrap about-in">
-      <div class="about-photo"><img src="img/andrea-sofa.jpg" alt="Andrea Rosso" width="460" height="520" loading="lazy"></div>
+      <div class="about-photo"><img src="img/andrea-sofa.jpg" alt="Andrea Rosso" width="460" height="520"></div>
       <div class="about-text">
-        <span class="eyebrow"><span lang="es">Sobre mí</span><span lang="en">About me</span></span>
-        <h2><span lang="es">Hola, soy Andrea Rosso, agente de seguros.</span><span lang="en">Hello, I’m Andrea Rosso, an insurance agent.</span></h2>
-        <p lang="es">Creo que cada familia merece recibir orientación clara, atención personalizada y la oportunidad de comprender sus opciones antes de tomar una decisión.</p>
-        <p lang="es">Mi propósito es acompañarte durante el proceso, responder tus preguntas y ayudarte a explorar alternativas que se adapten a tus necesidades.</p>
-        <p lang="en">I believe every family deserves clear guidance, personalized attention, and the opportunity to understand their options before making a decision.</p>
-        <p lang="en">My goal is to guide you through the process, answer your questions, and help you explore solutions that meet your needs.</p>
+        <span class="eyebrow"><span lang="es">Red médica</span><span lang="en">Medical network</span></span>
+        <h2><span lang="es">Una gran red de médicos y clínicas</span><span lang="en">A wide network of doctors and clinics</span></h2>
+        <p lang="es">Te puedo ofrecer una gran red de médicos y clínicas en todos los estados, de la mano de aseguradoras reconocidas.</p>
+        <p lang="en">I can offer you a wide network of doctors and clinics in every state, through well-known insurance carriers.</p>
         <p class="sign"><span lang="es">Será un gusto atenderte.</span><span lang="en">I look forward to assisting you.</span></p>
       </div>
+    </div>
+    <div class="wrap carriers-wrap">
+      <p class="carriers-title"><span lang="es">Trabajo con aseguradoras como</span><span lang="en">I work with carriers such as</span></p>
+      <!-- Para usar los logos oficiales: guardarlos en img/logos/ y cambiar cada <span class="carrier-name"> por <img src="img/logos/archivo.png" alt="Nombre"> -->
+      <ul class="carriers">
+        <li class="carrier"><span class="carrier-name">Cigna</span></li>
+        <li class="carrier"><span class="carrier-name">MedBlue</span></li>
+        <li class="carrier"><span class="carrier-name">Presidio</span></li>
+        <li class="carrier"><span class="carrier-name">UnitedHealthcare</span></li>
+        <li class="carrier"><span class="carrier-name">Assure for Life</span></li>
+      </ul>
     </div>
   </section>
 
@@ -337,20 +374,21 @@
     <div class="contact-info">
       <span class="eyebrow"><span lang="es">Contacto</span><span lang="en">Contact</span></span>
       <h2><span lang="es">Tu tranquilidad comienza con una buena orientación.</span><span lang="en">Your peace of mind starts with good guidance.</span></h2>
-      <p lang="es">Déjame tus datos y te contactaré para conversar sobre tus opciones de cobertura médica y protección familiar.</p>
-      <p lang="en">Leave your details and I’ll reach out to talk about your health coverage and family protection options.</p>
+      <p lang="es">Déjame tus datos y te contactaré para conversar sobre las opciones de seguro que mejor se ajustan a ti y a tu familia.</p>
+      <p lang="en">Leave your details and I’ll reach out to talk about the insurance options that best fit you and your family.</p>
       <ul class="contact-list">
-        <!-- CAMBIAR: número en formato internacional, ej. +13055551234 -->
-        <li><a href="tel:+10000000000">
+        <li><a href="tel:+17863714432">
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-          [TELÉFONO / WHATSAPP]</a></li>
-        <!-- CAMBIAR: correo de Andrea -->
-        <li><a href="mailto:correo@ejemplo.com">
+          +1 (786) 371-4432</a></li>
+        <li><a href="mailto:R3175@aol.com">
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          [CORREO ELECTRÓNICO]</a></li>
-        <li><span>
-          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-          [CIUDAD, ESTADO]</span></li>
+          R3175@aol.com</a></li>
+        <li><a href="https://www.instagram.com/enterateconandrearosso/" target="_blank" rel="noopener">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+          Instagram · @Enterateconandrearosso</a></li>
+        <li><a href="https://www.facebook.com/enterateconandrearosso" target="_blank" rel="noopener">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook · @Enterateconandrearosso</a></li>
       </ul>
     </div>
 
@@ -369,11 +407,20 @@
       <label class="field"><span><span lang="es">Correo electrónico</span><span lang="en">Email</span></span>
         <input type="email" name="email" autocomplete="email" required></label>
       <div class="row">
+        <label class="field"><span><span lang="es">Código postal (ZIP)</span><span lang="en">ZIP code</span></span>
+          <input type="text" name="codigo_postal" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required></label>
+        <label class="field"><span><span lang="es">Fecha de nacimiento</span><span lang="en">Date of birth</span></span>
+          <input type="date" name="fecha_nacimiento" autocomplete="bday" required></label>
+      </div>
+      <div class="row">
         <label class="field"><span><span lang="es">Me interesa</span><span lang="en">I’m interested in</span></span>
           <select name="interes">
             <option>Seguro médico / Health insurance</option>
-            <option>Protección familiar / Family protection</option>
-            <option>Ambos / Both</option>
+            <option>Seguro dental / Dental insurance</option>
+            <option>Seguro de accidente / Accident insurance</option>
+            <option>Seguro de vida / Life insurance</option>
+            <option>Seguro de hospitalización / Hospital insurance</option>
+            <option>Varios / Several</option>
           </select></label>
         <label class="field"><span><span lang="es">Idioma preferido</span><span lang="en">Preferred language</span></span>
           <select name="idioma">
@@ -395,10 +442,14 @@
   <div class="wrap footer-in">
     <div class="footer-brand">
       <img src="img/logo-andrea-rosso.png" alt="Andrea Rosso, agente de seguros" width="185" height="84" loading="lazy">
+      <div class="social">
+        <a href="https://www.instagram.com/enterateconandrearosso/" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DCC184" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+        <a href="https://www.facebook.com/enterateconandrearosso" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DCC184" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://wa.me/17863714432" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DCC184" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 1c-1.2-.4-2.3-1.5-2.7-2.7l1-1-1-2z"/></svg></a>
+      </div>
     </div>
     <div class="footer-legal">
-      <!-- CAMBIAR: número de licencia / NPN -->
-      <span>Licensed insurance agent · License / NPN: [NÚMERO DE LICENCIA]</span>
+      <span>Licensed insurance agent · NPN: 3596521</span>
       <span>Licensed in: Alabama, Arizona, Arkansas, California, Colorado, Delaware, Florida, Georgia, Illinois, Indiana, Kansas, Kentucky, Maryland, Massachusetts, Michigan, Mississippi, Missouri, New Jersey, North Carolina, Ohio, Pennsylvania, South Carolina, Tennessee, Texas, Utah, Virginia.</span>
       <span lang="es">La disponibilidad de planes, coberturas y precios depende del estado, la elegibilidad y los requisitos de cada aseguradora.</span>
       <span lang="en">Plan availability, coverage and pricing vary by state, eligibility and each carrier’s requirements.</span>
@@ -407,8 +458,7 @@
   </div>
 </footer>
 
-<!-- CAMBIAR: número de WhatsApp sin + ni espacios, ej. 13055551234 -->
-<a class="wa" href="https://wa.me/10000000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa" href="https://wa.me/17863714432" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 1c-1.2-.4-2.3-1.5-2.7-2.7l1-1-1-2z"/></svg>
 </a>
 
