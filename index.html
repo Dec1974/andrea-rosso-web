@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrea Rosso | Seguros médicos y protección familiar</title>
+<meta name="description" content="Andrea Rosso, agente de seguros en Estados Unidos. Orientación en seguros médicos y protección familiar, en español e inglés.">
+<meta property="og:title" content="Andrea Rosso | Health &amp; Family Protection">
+<meta property="og:description" content="Te ayudo a explorar opciones de cobertura médica y protección familiar. Atención en español e inglés.">
+<meta property="og:image" content="img/andrea-traje.jpg">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16315A; --navy-deep:#0F2442; --gold:#B8954A; --gold-light:#DCC184; --gold-text:#876728;
+    --ground:#F7F5F0; --line:#E6E1D6; --ink:#1D2433; --muted:#4A5263; --field:#FBFAF7; --field-line:#CFC8B8;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--ground);-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:var(--navy)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* Idioma: se oculta el texto del idioma que no está activo */
+  [data-lang="es"] [lang="en"]{display:none !important}
+  [data-lang="en"] [lang="es"]{display:none !important}
+
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--gold-text);text-transform:uppercase}
+  h1,h2,h3{margin:0;letter-spacing:-.5px}
+  h2{font-size:clamp(30px,3.6vw,42px);line-height:1.15;font-weight:800;color:var(--navy)}
+  p{margin:0}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;border-radius:10px;font-weight:800;font-size:16px;text-decoration:none;border:none;cursor:pointer;font-family:inherit;transition:transform .15s ease,background .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-deep);color:#fff}
+  .btn-gold{background:var(--gold-light);color:var(--navy-deep)}
+  .btn-gold:hover{background:#e6cf9a;color:var(--navy-deep)}
+  .btn-ghost{border:1.5px solid #8FA3C2;color:#fff;background:transparent}
+  .btn-ghost:hover{border-color:#fff;color:#fff}
+
+  /* Header */
+  header{background:var(--navy-deep);border-bottom:1px solid rgba(220,193,132,.25);position:sticky;top:0;z-index:20}
+  header nav a{color:#fff}
+  header nav a:hover{color:var(--gold-light)}
+  .header-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;padding-top:14px;padding-bottom:14px}
+  .brand{display:flex;align-items:center;text-decoration:none}
+  .brand img{height:68px;width:auto}
+  .logo{width:50px;height:50px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-weight:800;font-size:19px}
+  .brand-name{display:block;font-weight:800;font-size:18px;letter-spacing:.6px;color:var(--navy)}
+  .brand-sub{display:block;font-weight:600;font-size:11px;letter-spacing:1px;color:var(--gold-text)}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 20px}
+  .header-in{max-width:1280px}
+  nav a{text-decoration:none;font-weight:600;font-size:15px;padding:10px 0;display:inline-block}
+  .header-actions{display:flex;align-items:center;gap:12px}
+  .lang-switch{display:flex;border:1px solid rgba(220,193,132,.5);border-radius:999px;padding:3px}
+  .lang-switch button{border:none;border-radius:999px;min-width:44px;height:36px;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;background:transparent;color:#fff}
+  .lang-switch button[aria-pressed="true"]{background:var(--gold-light);color:var(--navy-deep)}
+  .header-cta{font-size:14px;padding:12px 18px;min-height:44px}
+
+  /* Hero */
+  .hero{background:var(--navy);color:#fff;overflow:hidden}
+  .hero-in{display:flex;flex-wrap:wrap;align-items:flex-end;gap:48px;padding-top:72px}
+  .hero-text{flex:1 1 480px;min-width:0;padding-bottom:80px;display:flex;flex-direction:column;gap:26px}
+  .hero .eyebrow{color:var(--gold-light)}
+  .hero h1{font-size:clamp(36px,5vw,58px);line-height:1.08;font-weight:800;letter-spacing:-1px}
+  .hero p{font-size:19px;line-height:1.6;color:#D9E1EE;max-width:560px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+  .hero-note{font-size:15px;color:#D9E1EE}
+  .hero-photo{flex:1 1 380px;min-width:0;display:flex;justify-content:center}
+  .hero-photo figure{margin:0;width:100%;max-width:460px;border-radius:24px 24px 0 0;overflow:hidden;border:6px solid var(--gold-light);border-bottom:none;background:#B9A2DE}
+  .hero-photo img{width:100%;height:560px;object-fit:cover;object-position:50% 12%}
+
+  /* Strip */
+  .strip{background:var(--navy-deep);color:#fff}
+  .strip ul{list-style:none;margin:0 auto;padding:22px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 32px;font-size:15px;font-weight:600}
+  .strip li{display:flex;align-items:center;gap:10px}
+  .strip li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold-light)}
+
+  /* Services */
+  .services{padding-top:96px;padding-bottom:40px}
+  .section-head{display:flex;flex-direction:column;gap:14px;max-width:680px;margin-bottom:48px}
+  .cards{display:flex;flex-wrap:wrap;gap:28px}
+  .card{flex:1 1 340px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:16px;scroll-margin-top:100px}
+  .card-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+  .card h3{font-size:24px;font-weight:800;color:var(--navy)}
+  .card p{font-size:16.5px;line-height:1.65;color:var(--muted)}
+  .card .lead{font-size:18px;line-height:1.5;color:var(--navy);font-weight:700}
+
+  /* Steps */
+  .steps{padding-top:56px;padding-bottom:96px}
+  .steps ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:24px}
+  .steps li{flex:1 1 260px;min-width:0;border-top:3px solid var(--gold);padding-top:22px;display:flex;flex-direction:column;gap:10px}
+  .step-n{font-size:14px;font-weight:800;color:var(--gold-text)}
+  .steps h3{font-size:20px;font-weight:800;color:var(--navy)}
+  .steps p{font-size:16px;line-height:1.6;color:var(--muted)}
+
+  /* Estados con licencia */
+  .states{padding-top:0;padding-bottom:96px}
+  .states-box{background:var(--navy);color:#fff;border-radius:24px;padding:48px;display:flex;flex-wrap:wrap;gap:32px 48px;align-items:flex-start}
+  .states-head{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:14px}
+  .states-head .eyebrow{color:var(--gold-light)}
+  .states-head h2{color:#fff}
+  .states-head p{font-size:16.5px;line-height:1.6;color:#D9E1EE}
+  .states-count{font-size:64px;line-height:1;font-weight:800;color:var(--gold-light);letter-spacing:-2px}
+  .states ul{flex:2 1 520px;min-width:0;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .states li{border:1px solid rgba(220,193,132,.55);border-radius:999px;padding:9px 16px;font-size:15px;font-weight:600;color:#fff}
+
+  /* About */
+  .about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-in{display:flex;flex-wrap:wrap;align-items:center;gap:64px;padding-top:96px;padding-bottom:96px}
+  .about-photo{flex:1 1 340px;min-width:0;max-width:460px}
+  .about-photo img{width:100%;height:520px;object-fit:cover;object-position:50% 25%;border-radius:20px}
+  .about-text{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:20px}
+  .about-text p{font-size:18px;line-height:1.65;color:var(--muted)}
+  .about-text .sign{font-size:20px;font-weight:800;color:var(--navy)}
+
+  /* Contact */
+  .contact{display:flex;flex-wrap:wrap;gap:48px;padding-top:96px;padding-bottom:96px}
+  .contact-info{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:18px}
+  .contact-info > p{font-size:17px;line-height:1.65;color:var(--muted)}
+  .contact-list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .contact-list a,.contact-list span{display:flex;align-items:center;gap:12px;min-height:44px;text-decoration:none;font-weight:600;color:var(--ink)}
+  .contact-list a:hover{color:var(--gold-text)}
+  form{flex:1 1 460px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:18px}
+  .row{display:flex;flex-wrap:wrap;gap:18px}
+  .row .field{flex:1 1 220px}
+  .field{min-width:0;display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:700;color:var(--navy)}
+  .field input,.field select,.field textarea{font-family:inherit;font-size:16px;color:var(--ink);background:var(--field);border:1px solid var(--field-line);border-radius:10px;padding:0 14px;height:48px}
+  .field textarea{height:auto;padding:12px 14px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+  .form-note{font-size:13px;line-height:1.5;color:#5A6172}
+  .form-ok{display:none;background:#EEF2F8;color:var(--navy);border-radius:10px;padding:14px 16px;font-weight:600}
+  form.sent .form-ok{display:block}
+
+  /* Footer */
+  footer{background:var(--navy-deep);color:#C9D3E3}
+  .footer-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;padding-top:48px;padding-bottom:48px}
+  .footer-brand img{height:84px;width:auto}
+  .footer-legal{flex:1 1 420px;min-width:0;max-width:620px;display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.6}
+
+  /* Botón flotante WhatsApp */
+  .wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#1F8F4E;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.2);z-index:30}
+
+  @media (max-width:760px){
+    header{position:static}
+    .brand img{height:52px}
+    .states-box{padding:28px}
+    .states-count{font-size:52px}
+    .states{padding-bottom:64px}
+    nav{order:3;width:100%}
+    nav ul{gap:0 18px}
+    .header-cta{display:none}
+    .hero-in{padding-top:48px;gap:28px}
+    .hero-text{padding-bottom:0}
+    .hero-photo img{height:420px}
+    .about-in{gap:36px;padding-top:64px;padding-bottom:64px}
+    .about-photo img{height:420px}
+    .services{padding-top:64px}
+    .contact{padding-top:64px;padding-bottom:64px}
+    .card,form{padding:26px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-in">
+    <a class="brand" href="#inicio">
+      <img src="img/logo-andrea-rosso.png" alt="Andrea Rosso, agente de seguros" width="150" height="68">
+    </a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#inicio"><span lang="es">Inicio</span><span lang="en">Home</span></a></li>
+        <li><a href="#seguros-medicos"><span lang="es">Seguros médicos</span><span lang="en">Health insurance</span></a></li>
+        <li><a href="#proteccion-familiar"><span lang="es">Protección familiar</span><span lang="en">Family protection</span></a></li>
+        <li><a href="#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About me</span></a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-gold header-cta" href="#contacto"><span lang="es">Solicitar orientación</span><span lang="en">Request guidance</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <span class="eyebrow"><span lang="es">Agente de seguros · Estados Unidos</span><span lang="en">Insurance agent · United States</span></span>
+        <h1>
+          <span lang="es">Tu familia merece protección. Tus decisiones merecen orientación.</span>
+          <span lang="en">Your family deserves protection. Your decisions deserve guidance.</span>
+        </h1>
+        <p lang="es">Hola, soy Andrea Rosso. Mi objetivo es ayudarte a explorar opciones de cobertura médica y protección familiar, con atención personalizada y explicaciones claras para que puedas tomar decisiones de acuerdo con tus necesidades.</p>
+        <p lang="en">Hello, I’m Andrea Rosso. My goal is to help you explore health coverage and family protection options, with personalized guidance and clear explanations so you can make informed decisions based on your needs.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contacto"><span lang="es">Solicitar orientación</span><span lang="en">Request guidance</span></a>
+          <a class="btn btn-ghost" href="#seguros-medicos"><span lang="es">Ver servicios</span><span lang="en">See services</span></a>
+        </div>
+        <span class="hero-note"><span lang="es">Estoy aquí para orientarte en español o inglés.</span><span lang="en">I’m here to assist you in English or Spanish.</span></span>
+      </div>
+      <div class="hero-photo">
+        <figure><img src="img/andrea-traje.jpg" alt="Andrea Rosso, agente de seguros" width="460" height="560"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" aria-label="Valores">
+    <ul class="wrap">
+      <li><span lang="es">Atención personalizada</span><span lang="en">Personalized attention</span></li>
+      <li><span lang="es">Explicaciones claras</span><span lang="en">Clear explanations</span></li>
+      <li><span lang="es">Español e inglés</span><span lang="en">English &amp; Spanish</span></li>
+      <li><span lang="es">Licencia en 26 estados</span><span lang="en">Licensed in 26 states</span></li>
+      <li><span lang="es">Opciones según tu presupuesto</span><span lang="en">Options for your budget</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap services" aria-labelledby="servicios-titulo">
+    <div class="section-head">
+      <span class="eyebrow"><span lang="es">Servicios</span><span lang="en">Services</span></span>
+      <h2 id="servicios-titulo"><span lang="es">Orientación para proteger lo que más importa</span><span lang="en">Guidance to protect what matters most</span></h2>
+    </div>
+    <div class="cards">
+      <article class="card" id="seguros-medicos">
+        <div class="card-icon" style="background:#EEF2F8" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16315A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M12 9v6M9 12h6"/></svg>
+        </div>
+        <h3><span lang="es">Seguros médicos</span><span lang="en">Health insurance</span></h3>
+        <p lang="es">Encontrar una cobertura médica puede resultar complicado. Estoy aquí para ayudarte a comprender las opciones disponibles, revisar tus necesidades y orientarte durante el proceso de selección.</p>
+        <p lang="es">Cada persona y cada familia tienen circunstancias diferentes. Mi objetivo es ayudarte a encontrar una opción que se ajuste a tu situación y presupuesto, según la disponibilidad y los requisitos aplicables.</p>
+        <p lang="en">Finding health coverage can feel complicated. I’m here to help you understand the available options, review your needs and guide you through the selection process.</p>
+        <p lang="en">Every person and every family has different circumstances. My goal is to help you find an option that fits your situation and budget, subject to availability and applicable requirements.</p>
+      </article>
+      <article class="card" id="proteccion-familiar">
+        <div class="card-icon" style="background:#F6EFDF" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-6z"/><circle cx="9.5" cy="10" r="1.6"/><circle cx="14.5" cy="10" r="1.6"/><path d="M7 15.5c.6-1.5 1.5-2.2 2.5-2.2s1.9.7 2.5 2.2c.6-1.5 1.5-2.2 2.5-2.2s1.9.7 2.5 2.2"/></svg>
+        </div>
+        <h3><span lang="es">Protección familiar</span><span lang="en">Family protection</span></h3>
+        <p class="lead" lang="es">Planificar hoy puede ayudar a proteger el mañana.</p>
+        <p lang="es">La protección financiera de tu familia comienza con información y una buena planificación. Te ayudo a explorar soluciones de protección de acuerdo con tus objetivos, responsabilidades familiares y presupuesto.</p>
+        <p lang="es">Mi compromiso es explicarte las opciones con claridad para que puedas decidir con confianza.</p>
+        <p class="lead" lang="en">Planning today can help protect tomorrow.</p>
+        <p lang="en">Your family’s financial protection starts with information and good planning. I help you explore protection solutions based on your goals, family responsibilities and budget.</p>
+        <p lang="en">My commitment is to explain your options clearly so you can decide with confidence.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap steps" aria-label="Proceso">
+    <ol>
+      <li>
+        <span class="step-n">01</span>
+        <h3><span lang="es">Conversamos</span><span lang="en">We talk</span></h3>
+        <p lang="es">Escucho tu situación, tus preguntas y lo que necesitas proteger.</p>
+        <p lang="en">I listen to your situation, your questions and what you need to protect.</p>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <h3><span lang="es">Revisamos opciones</span><span lang="en">We review options</span></h3>
+        <p lang="es">Te explico con claridad las alternativas disponibles según tus necesidades y presupuesto.</p>
+        <p lang="en">I clearly explain the available alternatives based on your needs and budget.</p>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <h3><span lang="es">Decides con confianza</span><span lang="en">You decide with confidence</span></h3>
+        <p lang="es">Te acompaño durante el proceso para que tomes una decisión informada.</p>
+        <p lang="en">I guide you through the process so you can make an informed decision.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="wrap states" id="estados" aria-labelledby="estados-titulo">
+    <div class="states-box">
+      <div class="states-head">
+        <span class="eyebrow"><span lang="es">Estados con licencia</span><span lang="en">Licensed states</span></span>
+        <span class="states-count">26</span>
+        <h2 id="estados-titulo"><span lang="es">Te atiendo en 26 estados</span><span lang="en">I can help you in 26 states</span></h2>
+        <p lang="es">Cuento con licencia como agente de seguros en estos estados de Estados Unidos.</p>
+        <p lang="en">I’m a licensed insurance agent in these U.S. states.</p>
+      </div>
+      <ul aria-label="Estados / States">
+        <li>Alabama</li>
+        <li>Arizona</li>
+        <li>Arkansas</li>
+        <li>California</li>
+        <li>Colorado</li>
+        <li>Delaware</li>
+        <li>Florida</li>
+        <li>Georgia</li>
+        <li>Illinois</li>
+        <li>Indiana</li>
+        <li>Kansas</li>
+        <li>Kentucky</li>
+        <li>Maryland</li>
+        <li>Massachusetts</li>
+        <li>Michigan</li>
+        <li>Mississippi</li>
+        <li>Missouri</li>
+        <li>New Jersey</li>
+        <li>North Carolina</li>
+        <li>Ohio</li>
+        <li>Pennsylvania</li>
+        <li>South Carolina</li>
+        <li>Tennessee</li>
+        <li>Texas</li>
+        <li>Utah</li>
+        <li>Virginia</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about" id="sobre-mi">
+    <div class="wrap about-in">
+      <div class="about-photo"><img src="img/andrea-sofa.jpg" alt="Andrea Rosso" width="460" height="520" loading="lazy"></div>
+      <div class="about-text">
+        <span class="eyebrow"><span lang="es">Sobre mí</span><span lang="en">About me</span></span>
+        <h2><span lang="es">Hola, soy Andrea Rosso, agente de seguros.</span><span lang="en">Hello, I’m Andrea Rosso, an insurance agent.</span></h2>
+        <p lang="es">Creo que cada familia merece recibir orientación clara, atención personalizada y la oportunidad de comprender sus opciones antes de tomar una decisión.</p>
+        <p lang="es">Mi propósito es acompañarte durante el proceso, responder tus preguntas y ayudarte a explorar alternativas que se adapten a tus necesidades.</p>
+        <p lang="en">I believe every family deserves clear guidance, personalized attention, and the opportunity to understand their options before making a decision.</p>
+        <p lang="en">My goal is to guide you through the process, answer your questions, and help you explore solutions that meet your needs.</p>
+        <p class="sign"><span lang="es">Será un gusto atenderte.</span><span lang="en">I look forward to assisting you.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contact" id="contacto">
+    <div class="contact-info">
+      <span class="eyebrow"><span lang="es">Contacto</span><span lang="en">Contact</span></span>
+      <h2><span lang="es">Tu tranquilidad comienza con una buena orientación.</span><span lang="en">Your peace of mind starts with good guidance.</span></h2>
+      <p lang="es">Déjame tus datos y te contactaré para conversar sobre tus opciones de cobertura médica y protección familiar.</p>
+      <p lang="en">Leave your details and I’ll reach out to talk about your health coverage and family protection options.</p>
+      <ul class="contact-list">
+        <!-- CAMBIAR: número en formato internacional, ej. +13055551234 -->
+        <li><a href="tel:+10000000000">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          [TELÉFONO / WHATSAPP]</a></li>
+        <!-- CAMBIAR: correo de Andrea -->
+        <li><a href="mailto:correo@ejemplo.com">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          [CORREO ELECTRÓNICO]</a></li>
+        <li><span>
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#876728" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          [CIUDAD, ESTADO]</span></li>
+      </ul>
+    </div>
+
+    <!--
+      FORMULARIO: para recibir los mensajes por correo sin programar nada,
+      crea una cuenta gratuita en https://formspree.io, crea un formulario
+      y reemplaza TU_ID_FORMSPREE en el atributo action por el código que te den.
+    -->
+    <form id="form-contacto" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST">
+      <div class="row">
+        <label class="field"><span><span lang="es">Nombre completo</span><span lang="en">Full name</span></span>
+          <input type="text" name="nombre" autocomplete="name" required></label>
+        <label class="field"><span><span lang="es">Teléfono</span><span lang="en">Phone</span></span>
+          <input type="tel" name="telefono" autocomplete="tel" required></label>
+      </div>
+      <label class="field"><span><span lang="es">Correo electrónico</span><span lang="en">Email</span></span>
+        <input type="email" name="email" autocomplete="email" required></label>
+      <div class="row">
+        <label class="field"><span><span lang="es">Me interesa</span><span lang="en">I’m interested in</span></span>
+          <select name="interes">
+            <option>Seguro médico / Health insurance</option>
+            <option>Protección familiar / Family protection</option>
+            <option>Ambos / Both</option>
+          </select></label>
+        <label class="field"><span><span lang="es">Idioma preferido</span><span lang="en">Preferred language</span></span>
+          <select name="idioma">
+            <option>Español</option>
+            <option>English</option>
+          </select></label>
+      </div>
+      <label class="field"><span><span lang="es">Mensaje (opcional)</span><span lang="en">Message (optional)</span></span>
+        <textarea name="mensaje" rows="4"></textarea></label>
+      <button class="btn btn-navy" type="submit"><span lang="es">Solicitar orientación</span><span lang="en">Request guidance</span></button>
+      <div class="form-ok" role="status"><span lang="es">¡Gracias! Te contactaré pronto.</span><span lang="en">Thank you! I’ll be in touch soon.</span></div>
+      <p class="form-note" lang="es">Atención en español e inglés. Tus datos solo se usarán para contactarte.</p>
+      <p class="form-note" lang="en">Service in English and Spanish. Your information will only be used to contact you.</p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <img src="img/logo-andrea-rosso.png" alt="Andrea Rosso, agente de seguros" width="185" height="84" loading="lazy">
+    </div>
+    <div class="footer-legal">
+      <!-- CAMBIAR: número de licencia / NPN -->
+      <span>Licensed insurance agent · License / NPN: [NÚMERO DE LICENCIA]</span>
+      <span>Licensed in: Alabama, Arizona, Arkansas, California, Colorado, Delaware, Florida, Georgia, Illinois, Indiana, Kansas, Kentucky, Maryland, Massachusetts, Michigan, Mississippi, Missouri, New Jersey, North Carolina, Ohio, Pennsylvania, South Carolina, Tennessee, Texas, Utah, Virginia.</span>
+      <span lang="es">La disponibilidad de planes, coberturas y precios depende del estado, la elegibilidad y los requisitos de cada aseguradora.</span>
+      <span lang="en">Plan availability, coverage and pricing vary by state, eligibility and each carrier’s requirements.</span>
+      <span>© <span id="year">2026</span> Andrea Rosso</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CAMBIAR: número de WhatsApp sin + ni espacios, ej. 13055551234 -->
+<a class="wa" href="https://wa.me/10000000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 1c-1.2-.4-2.3-1.5-2.7-2.7l1-1-1-2z"/></svg>
+</a>
+
+<script>
+  // Cambio de idioma (recuerda la elección del visitante)
+  (function(){
+    var root = document.documentElement;
+    var buttons = document.querySelectorAll('[data-set-lang]');
+    function setLang(l){
+      root.setAttribute('data-lang', l);
+      root.setAttribute('lang', l);
+      buttons.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.setLang === l ? 'true' : 'false'); });
+      try { localStorage.setItem('ar-lang', l); } catch(e){}
+    }
+    buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.setLang); }); });
+    var saved = null;
+    try { saved = localStorage.getItem('ar-lang'); } catch(e){}
+    if (saved) setLang(saved);
+  })();
+
+  // Envío del formulario sin salir de la página
+  (function(){
+    var form = document.getElementById('form-contacto');
+    form.addEventListener('submit', function(e){
+      if (form.action.indexOf('TU_ID_FORMSPREE') !== -1) { e.preventDefault(); form.classList.add('sent'); return; }
+      e.preventDefault();
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function(){ form.reset(); form.classList.add('sent'); })
+        .catch(function(){ form.submit(); });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
