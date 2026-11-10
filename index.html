@@ -149,6 +149,11 @@
   .form-note{font-size:13px;line-height:1.5;color:#5A6172}
   .form-ok{display:none;background:#EEF2F8;color:var(--navy);border-radius:10px;padding:14px 16px;font-weight:600}
   form.sent .form-ok{display:block}
+  .form-error{display:none;background:#FBEDEA;color:#8A2A1B;border-radius:10px;padding:14px 16px;font-weight:600}
+  .form-error a{color:#8A2A1B}
+  form.failed .form-error{display:block}
+  form.sending button[type="submit"]{opacity:.65;pointer-events:none}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
   /* Footer */
   footer{background:var(--navy-deep);color:#C9D3E3}
@@ -392,12 +397,10 @@
       </ul>
     </div>
 
-    <!--
-      FORMULARIO: para recibir los mensajes por correo sin programar nada,
-      crea una cuenta gratuita en https://formspree.io, crea un formulario
-      y reemplaza TU_ID_FORMSPREE en el atributo action por el código que te den.
-    -->
-    <form id="form-contacto" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST">
+    <!-- El formulario lo procesa enviar.php (correo a Andrea + copia de seguridad + CRM) -->
+    <form id="form-contacto" action="enviar.php" method="POST">
+      <div class="hp" aria-hidden="true"><label>No llenar <input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="t" value="">
       <div class="row">
         <label class="field"><span><span lang="es">Nombre completo</span><span lang="en">Full name</span></span>
           <input type="text" name="nombre" autocomplete="name" required></label>
@@ -431,7 +434,8 @@
       <label class="field"><span><span lang="es">Mensaje (opcional)</span><span lang="en">Message (optional)</span></span>
         <textarea name="mensaje" rows="4"></textarea></label>
       <button class="btn btn-navy" type="submit"><span lang="es">Solicitar orientación</span><span lang="en">Request guidance</span></button>
-      <div class="form-ok" role="status"><span lang="es">¡Gracias! Te contactaré pronto.</span><span lang="en">Thank you! I’ll be in touch soon.</span></div>
+      <div class="form-ok" role="status"><span lang="es">¡Gracias! Recibí tus datos y te contactaré pronto.</span><span lang="en">Thank you! I received your details and will be in touch soon.</span></div>
+      <div class="form-error" role="alert"><span lang="es">No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbeme por <a href="https://wa.me/17863714432" target="_blank" rel="noopener">WhatsApp</a>.</span><span lang="en">We couldn’t send your request. Please try again or message me on <a href="https://wa.me/17863714432" target="_blank" rel="noopener">WhatsApp</a>.</span> <span class="form-error-detail"></span></div>
       <p class="form-note" lang="es">Atención en español e inglés. Tus datos solo se usarán para contactarte.</p>
       <p class="form-note" lang="en">Service in English and Spanish. Your information will only be used to contact you.</p>
     </form>
@@ -482,12 +486,23 @@
   // Envío del formulario sin salir de la página
   (function(){
     var form = document.getElementById('form-contacto');
+    var detail = form.querySelector('.form-error-detail');
+    form.elements.t.value = Date.now();
+    if (/[?&]enviado=1/.test(location.search)) form.classList.add('sent');
+    if (/[?&]enviado=0/.test(location.search)) form.classList.add('failed');
     form.addEventListener('submit', function(e){
-      if (form.action.indexOf('TU_ID_FORMSPREE') !== -1) { e.preventDefault(); form.classList.add('sent'); return; }
       e.preventDefault();
-      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
-        .then(function(){ form.reset(); form.classList.add('sent'); })
-        .catch(function(){ form.submit(); });
+      form.classList.remove('sent', 'failed');
+      form.classList.add('sending');
+      detail.textContent = '';
+      fetch(form.getAttribute('action'), { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function(r){ return r.json().catch(function(){ return { ok: false }; }); })
+        .then(function(res){
+          form.classList.remove('sending');
+          if (res && res.ok) { form.reset(); form.elements.t.value = Date.now(); form.classList.add('sent'); }
+          else { if (res && res.mensaje) detail.textContent = res.mensaje; form.classList.add('failed'); }
+        })
+        .catch(function(){ form.classList.remove('sending'); form.classList.add('failed'); });
     });
     document.getElementById('year').textContent = new Date().getFullYear();
   })();

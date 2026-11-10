@@ -3,5 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=$HOME/public_html/
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp enviar.php $DEPLOYPATH
     - /bin/mkdir -p ${DEPLOYPATH}img
     - /bin/cp -R img/. ${DEPLOYPATH}img/
